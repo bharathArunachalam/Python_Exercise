@@ -4,6 +4,7 @@ Input: nums = [3,2,4], target = 6
 Output: [1,2]"""
 Source: https://leetcode.com/
 
+Solution:1
 # Brute force 
 
 def indices_finding(nums, target):
@@ -14,3 +15,17 @@ def indices_finding(nums, target):
                 break 
             else:
                 continue 
+
+
+Solution:2
+#Optimal than the above method:
+
+def indices_find(nums, target):
+    for i in range(len(nums)): #(0,4)
+        x = target - nums[i]
+        if x in nums and nums.count(nums[i]) > 1:
+            j = nums.index(x,i+1)
+            return [i,j]
+        elif x in nums and nums[i]!= x:
+            j = nums.index(x)
+            return [i,j]
