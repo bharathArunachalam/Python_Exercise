@@ -1,8 +1,10 @@
-"""Given an array of integers 'nums' and an integer 'target', return indices of the two numbers such that they add up to target.
+"""
+Q: Given an array of integers 'nums' and an integer 'target', return indices of the two numbers such that they add up to target.
 Example: 
 Input: nums = [3,2,4], target = 6
-Output: [1,2]"""
+Output: [1,2]
 Source: https://leetcode.com/
+"""
 
 Solution:1
 # Brute force 
