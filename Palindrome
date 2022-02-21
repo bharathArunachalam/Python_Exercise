@@ -1,0 +1,13 @@
+An integer is a palindrome when it reads the same backward as forward.
+
+
+def palindrome(x):
+  """returns True or False if a number is a palindrome or not a palindrome respectively."""
+  
+    if x < 0:
+      return False
+    x = str(x)
+    for i in range(0, len(x) // 2):  # (0,1)
+        if x[i] != x[-i - 1]:
+            return False
+    return True
