@@ -1,0 +1,39 @@
+"""
+Q: Given a roman numeral, convert it to an integer.
+Example:
+Input: 'MCMXCIV'
+Output: 1994
+Source: https://leetcode.com/
+Additional info:
+Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+"""
+#Solution
+def roman_numaral(roman_number):
+
+    roman_number_list= list(roman_number)
+    value_list = []
+
+    roman = {'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000}
+
+    for roman_number_ in roman_number_list:
+        value = roman[roman_number_]
+        value_list.append(value)
+
+    for i in range(len(value_list)-1):
+        if value_list[i] < value_list[i + 1]:
+            value_list[i] = - value_list[i]
+
+    return(sum(value_list))
