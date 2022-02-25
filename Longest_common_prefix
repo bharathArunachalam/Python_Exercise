@@ -1,0 +1,31 @@
+"""
+Q: Write a function to find the longest common prefix string amongst an array of strings.
+Example:
+Input: strs = ["flower","flow","flight"]
+Output: "fl
+Source: https://leetcode.com/
+"""
+
+#Solution: Brute force
+
+def common_prefix(strs):
+    len_items = []
+    l = []
+    m = []
+    s =''
+    
+    for i in range(len(strs)):
+        len_items.append(len(strs[i]))
+    length = min(len_items)
+
+    for j in range(length): #(0,4)
+        for i in range(len(strs)): #(0,3)
+            m.append(strs[i][j])
+        if m.count(m[0])/len(m) == 1:
+            l.append(m[0])
+            m=[]
+        else:
+            break
+    for ele in l:
+        s += ele
+    return s
